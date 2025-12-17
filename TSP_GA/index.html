@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    (function() {
-      // 维护路径映射：小写路径 → 原大小写路径
-      const pathMap = {
-        '/kids/animals': '/Kids/Animals',
-        '/kids/englishpairs': '/Kids/EnglishPairs',
-        '/kids/englishwordgame': '/Kids/EnglishWordGame'
-        '/apptest/tsp_ga': '/APPTest/TSP_GA'
-      };
-    
-      const lowerPath = window.location.pathname.toLowerCase();
-      // 若映射表中存在该小写路径，重定向到原路径
-      if (pathMap[lowerPath]) {
-        window.location.href = window.location.origin + pathMap[lowerPath] + window.location.search + window.location.hash;
-      }
-    })();
+    <script>
+        function() {
+          // 维护路径映射：小写路径 → 原大小写路径
+          const pathMap = {
+            '/kids/animals': '/Kids/Animals',
+            '/kids/englishpairs': '/Kids/EnglishPairs',
+            '/kids/englishwordgame': '/Kids/EnglishWordGame'
+            '/apptest/tsp_ga': '/APPTest/TSP_GA'
+          };
+        
+          const lowerPath = window.location.pathname.toLowerCase();
+          // 若映射表中存在该小写路径，重定向到原路径
+          if (pathMap[lowerPath]) {
+            window.location.href = window.location.origin + pathMap[lowerPath] + window.location.search + window.location.hash;
+          }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>遗传算法求解TSP问题</title>
