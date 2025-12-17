@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    // 放在 <head> 中，优先执行
+(function() {
+  const path = window.location.pathname;
+  const lowerPath = path.toLowerCase();
+  // 若当前路径不是小写，重定向到小写版本
+  if (path !== lowerPath) {
+    window.location.href = window.location.origin + lowerPath + window.location.search + window.location.hash;
+  }
+})();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>遗传算法求解TSP问题</title>
